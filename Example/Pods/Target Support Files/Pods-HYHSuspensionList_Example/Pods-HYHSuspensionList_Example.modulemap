@@ -1,0 +1,6 @@
+framework module Pods_HYHSuspensionList_Example {
+  umbrella header "Pods-HYHSuspensionList_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

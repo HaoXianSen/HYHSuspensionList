@@ -1,0 +1,6 @@
+framework module HYHSuspensionList {
+  umbrella header "HYHSuspensionList-umbrella.h"
+
+  export *
+  module * { export * }
+}

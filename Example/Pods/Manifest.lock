@@ -1,0 +1,27 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - HYHSuspensionList (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - HYHSuspensionList (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FBSnapshotTestCase
+
+EXTERNAL SOURCES:
+  HYHSuspensionList:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  HYHSuspensionList: 64f6a6d7faa9075d7794b7613c918906b99e3d9a
+
+PODFILE CHECKSUM: 06438d8ce351092b323fb3ab96c951e971e36572
+
+COCOAPODS: 1.5.3
