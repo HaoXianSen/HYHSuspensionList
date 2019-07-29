@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0BE9EA6E484401BC05F1D8AA /* Pods_HYHSuspensionList_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D492D4570F3457A7EA4C730E /* Pods_HYHSuspensionList_Example.framework */; };
 		3C06E3D8041DED73F6A718D4 /* Pods_HYHSuspensionList_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9417EA3460F4C4F937C67D2C /* Pods_HYHSuspensionList_Tests.framework */; };
+		4AD922FC22EECDC500A6B95B /* header_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4AD922FB22EECDC500A6B95B /* header_image.jpg */; };
+		4AD922FF22EED5CE00A6B95B /* HYHFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD922FE22EED5CE00A6B95B /* HYHFirstViewController.m */; };
+		4AD9230222EED5DC00A6B95B /* HYHSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9230122EED5DC00A6B95B /* HYHSecondViewController.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -38,7 +41,12 @@
 
 /* Begin PBXFileReference section */
 		165D2946D69B035F09ADF3D9 /* Pods-HYHSuspensionList_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYHSuspensionList_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYHSuspensionList_Tests/Pods-HYHSuspensionList_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		34C959933BE8A3C04C94014A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		34C959933BE8A3C04C94014A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		4AD922FB22EECDC500A6B95B /* header_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = header_image.jpg; sourceTree = "<group>"; };
+		4AD922FD22EED5CE00A6B95B /* HYHFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYHFirstViewController.h; sourceTree = "<group>"; };
+		4AD922FE22EED5CE00A6B95B /* HYHFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYHFirstViewController.m; sourceTree = "<group>"; };
+		4AD9230022EED5DC00A6B95B /* HYHSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYHSecondViewController.h; sourceTree = "<group>"; };
+		4AD9230122EED5DC00A6B95B /* HYHSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYHSecondViewController.m; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* HYHSuspensionList_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYHSuspensionList_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,13 +67,13 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9417EA3460F4C4F937C67D2C /* Pods_HYHSuspensionList_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HYHSuspensionList_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7C57A65EB5F17326C66E1F /* Pods-HYHSuspensionList_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYHSuspensionList_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYHSuspensionList_Example/Pods-HYHSuspensionList_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		BE0219A3851098DFED192B97 /* Pods-HYHSuspensionList_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYHSuspensionList_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYHSuspensionList_Example/Pods-HYHSuspensionList_Example.release.xcconfig"; sourceTree = "<group>"; };
-		C1AF32E1C492236BB5062A48 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		C1AF32E1C492236BB5062A48 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D492D4570F3457A7EA4C730E /* Pods_HYHSuspensionList_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HYHSuspensionList_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC802AE7A732F751B35CD658 /* HYHSuspensionList.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = HYHSuspensionList.podspec; path = ../HYHSuspensionList.podspec; sourceTree = "<group>"; };
+		FC802AE7A732F751B35CD658 /* HYHSuspensionList.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HYHSuspensionList.podspec; path = ../HYHSuspensionList.podspec; sourceTree = "<group>"; };
 		FF5895B47F1BF7E477A8C18E /* Pods-HYHSuspensionList_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYHSuspensionList_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYHSuspensionList_Tests/Pods-HYHSuspensionList_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,11 +142,16 @@
 			children = (
 				6003F59C195388D20070C39A /* HYHAppDelegate.h */,
 				6003F59D195388D20070C39A /* HYHAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* HYHViewController.h */,
 				6003F5A6195388D20070C39A /* HYHViewController.m */,
+				4AD922FD22EED5CE00A6B95B /* HYHFirstViewController.h */,
+				4AD922FE22EED5CE00A6B95B /* HYHFirstViewController.m */,
+				4AD9230022EED5DC00A6B95B /* HYHSecondViewController.h */,
+				4AD9230122EED5DC00A6B95B /* HYHSecondViewController.m */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
+				4AD922FB22EECDC500A6B95B /* header_image.jpg */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for HYHSuspensionList";
@@ -258,6 +271,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -279,6 +293,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				4AD922FC22EECDC500A6B95B /* header_image.jpg in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -301,7 +316,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HYHSuspensionList_Example/Pods-HYHSuspensionList_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-HYHSuspensionList_Example/Pods-HYHSuspensionList_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/HYHSuspensionList/HYHSuspensionList.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -310,7 +325,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HYHSuspensionList_Example/Pods-HYHSuspensionList_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HYHSuspensionList_Example/Pods-HYHSuspensionList_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		36A3EDB1D25C32BF73CE0FCA /* [CP] Embed Pods Frameworks */ = {
@@ -319,7 +334,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HYHSuspensionList_Tests/Pods-HYHSuspensionList_Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-HYHSuspensionList_Tests/Pods-HYHSuspensionList_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -328,7 +343,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HYHSuspensionList_Tests/Pods-HYHSuspensionList_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HYHSuspensionList_Tests/Pods-HYHSuspensionList_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A040E22668F4B97226538C1D /* [CP] Check Pods Manifest.lock */ = {
@@ -376,7 +391,9 @@
 			files = (
 				6003F59E195388D20070C39A /* HYHAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* HYHViewController.m in Sources */,
+				4AD9230222EED5DC00A6B95B /* HYHSecondViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				4AD922FF22EED5CE00A6B95B /* HYHFirstViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +524,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HYHSuspensionList/HYHSuspensionList-Prefix.pch";
 				INFOPLIST_FILE = "HYHSuspensionList/HYHSuspensionList-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -523,6 +541,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HYHSuspensionList/HYHSuspensionList-Prefix.pch";
 				INFOPLIST_FILE = "HYHSuspensionList/HYHSuspensionList-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
