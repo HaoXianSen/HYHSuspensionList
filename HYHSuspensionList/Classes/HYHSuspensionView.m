@@ -8,13 +8,18 @@
 #import "HYHSuspensionView.h"
 #import "HYHInnerTableViewCell.h"
 #import "HYHSuspensionViewDefine.h"
+#import "HYHTableView.h"
 
 static NSString *kCellId = @"HYH_CELL_IDENTIFIER";
 
-@interface HYHSuspensionView()<UITableViewDataSource, UITableViewDelegate>
+@interface HYHSuspensionView()<UITableViewDataSource, UITableViewDelegate, HYHInnerTableViewCellDelegate>
 
-@property (nonatomic, weak) UITableView *tableView;
+@property (nonatomic, weak) HYHTableView *tableView;
 @property (nonatomic, weak) UIScrollView *innerScrollView;
+
+@property (nonatomic, assign) CGFloat rowHeight;
+
+@property (nonatomic, assign) BOOL itemScrollViewCanScroll;
 
 @end
 
@@ -44,7 +49,9 @@ static NSString *kCellId = @"HYH_CELL_IDENTIFIER";
 
 - (void)initailize {
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    _currentIndex = 0;
+    
+    HYHTableView *tableView = [[HYHTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     tableView.dataSource = self;
     tableView.delegate = self;
     tableView.showsVerticalScrollIndicator = NO;
@@ -66,6 +73,8 @@ static NSString *kCellId = @"HYH_CELL_IDENTIFIER";
 - (void)setDataSource:(id<HYHSuspensionViewDataSource>)dataSource {
     _dataSource = dataSource;
     self.tableView.tableHeaderView = [self.dataSource suspensionViewHeaderView:self];
+//     _rowHeight = self.bounds.size.height - [self.dataSource suspensionViewHeaderView:self].bounds.size.height - [self tableView:self.tableView heightForHeaderInSection:0] - HYH_BOTTOM_HEIGHT;
+     _rowHeight = self.bounds.size.height + HYH_BOTTOM_HEIGHT;
 }
 
 - (void)layoutSubviews {
@@ -86,6 +95,7 @@ static NSString *kCellId = @"HYH_CELL_IDENTIFIER";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HYHInnerTableViewCell *cell = (HYHInnerTableViewCell *)[tableView dequeueReusableCellWithIdentifier:kCellId];
+    cell.delegate = self;
     NSInteger itemsCount = [self.dataSource suspensionViewNumberOfItems:self];
     CGFloat w = self.tableView.bounds.size.width;
     CGFloat h = [self tableView:self.tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
@@ -104,6 +114,9 @@ static NSString *kCellId = @"HYH_CELL_IDENTIFIER";
             [controller didMoveToParentViewController:currentViewController];
             
         }
+        [item setItemScrollViewDidScroll:^(UIScrollView * _Nonnull scroll) {
+            [self itemScrollViewDidScroll:scroll];
+        }];
         UIView *containerView = item.containerView;
         containerView.frame = CGRectMake(i * w, 0, w, h);
         [contentView addSubview:containerView];
@@ -121,8 +134,46 @@ static NSString *kCellId = @"HYH_CELL_IDENTIFIER";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat height = self.bounds.size.height - [self.dataSource suspensionViewHeaderView:self].bounds.size.height - [self tableView:tableView heightForHeaderInSection:0] - HYH_BOTTOM_HEIGHT;
-    return height;
+    return _rowHeight;
+}
+
+#pragma mark - HYHInnerTableViewCellDelegate
+- (void)innerTableViewCell:(HYHInnerTableViewCell *)cell scrolledToPageIndex:(NSInteger)index {
+    self.currentIndex = index;
+//    UIScrollView *scrollView = [self.dataSource suspensionView:self controllerForSliderAtIndex:index].scrollView;
+//    if (scrollView.contentSize.height > [self tableView:self.tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]]) {
+//        if (scrollView.contentSize.height <= self.tableView.bounds.size.height + HYH_BOTTOM_HEIGHT) {
+//            self.rowHeight = scrollView.contentSize.height + HYH_BOTTOM_HEIGHT;
+//        } else {
+//            self.rowHeight = self.tableView.bounds.size.height + HYH_BOTTOM_HEIGHT;
+//        }
+//        [self.tableView reloadData];
+//    } else {
+//        self.rowHeight = self.bounds.size.height - [self.dataSource suspensionViewHeaderView:self].bounds.size.height - [self tableView:self.tableView heightForHeaderInSection:0] - HYH_BOTTOM_HEIGHT;
+//        [self.tableView reloadData];
+//    }
+    if ([self.delegate respondsToSelector:@selector(suspensionView:didChangeSlidePageIndex:)]) {
+        [self.delegate suspensionView:self didChangeSlidePageIndex:self.currentIndex];
+    }
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat offsetY = scrollView.contentOffset.y;
+    CGRect maxScrollRect = [self.tableView rectForHeaderInSection:0];
+    CGFloat maxY = maxScrollRect.origin.y;
+    self.tableView.canScroll = (offsetY < maxY) && !self.itemScrollViewCanScroll;
+    if (!self.tableView.canScroll) {
+        [scrollView setContentOffset:CGPointMake(0, maxY)];
+    }
+}
+
+- (void)itemScrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat offsetY = scrollView.contentOffset.y;
+    self.itemScrollViewCanScroll = (offsetY >  0) && !self.tableView.canScroll;
+    if (self.tableView.canScroll) {
+        [scrollView setContentOffset:CGPointZero];
+    }
 }
 
 @end

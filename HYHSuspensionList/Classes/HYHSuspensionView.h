@@ -47,6 +47,9 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol HYHItemProtocol <NSObject>
 
 @required
+
+@property (nonatomic, copy) void(^itemScrollViewDidScroll)(UIScrollView *scroll);
+
 - (UIView *)containerView;
 - (UIScrollView *)scrollView;
 

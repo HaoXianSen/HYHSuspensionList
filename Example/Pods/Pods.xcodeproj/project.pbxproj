@@ -19,6 +19,8 @@
 		47B32CBC4430A281D52CF8600C98A8BF /* HYHInnerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FBBECA5F84B050DCCA65BC37C8171 /* HYHInnerTableViewCell.m */; };
 		4AD9230922EEF85100A6B95B /* HYHSuspensionViewDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AD9230722EEF85000A6B95B /* HYHSuspensionViewDefine.h */; };
 		4AD9230A22EEF85100A6B95B /* HYHSuspensionViewDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9230822EEF85000A6B95B /* HYHSuspensionViewDefine.m */; };
+		4AD9231122EF100700A6B95B /* HYHTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AD9230F22EF100700A6B95B /* HYHTableView.h */; };
+		4AD9231222EF100700A6B95B /* HYHTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9231022EF100700A6B95B /* HYHTableView.m */; };
 		65ABA28A57DBED21C9D75479736C0D09 /* Pods-HYHSuspensionList_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0807CACB013681001FA26DEEC449FFB0 /* Pods-HYHSuspensionList_Example-dummy.m */; };
 		66B6715C478462D1D9ECAA0A15705798 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD4ED544B638D07C7D755AF1C27116A /* Foundation.framework */; };
 		6AE239C5D116E1C06F5705699FB9EAF0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E601BD54DA9BF4071437E60125281FA /* XCTest.framework */; };
@@ -93,6 +95,8 @@
 		47D6FAFFBB1B5F0CA033360651385E03 /* Pods-HYHSuspensionList_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HYHSuspensionList_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		4AD9230722EEF85000A6B95B /* HYHSuspensionViewDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HYHSuspensionViewDefine.h; path = HYHSuspensionList/Classes/HYHSuspensionViewDefine.h; sourceTree = "<group>"; };
 		4AD9230822EEF85000A6B95B /* HYHSuspensionViewDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HYHSuspensionViewDefine.m; path = HYHSuspensionList/Classes/HYHSuspensionViewDefine.m; sourceTree = "<group>"; };
+		4AD9230F22EF100700A6B95B /* HYHTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HYHTableView.h; path = HYHSuspensionList/Classes/HYHTableView.h; sourceTree = "<group>"; };
+		4AD9231022EF100700A6B95B /* HYHTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HYHTableView.m; path = HYHSuspensionList/Classes/HYHTableView.m; sourceTree = "<group>"; };
 		4FBBC4264F17A9FE90A8D0CCB52A74AA /* Pods-HYHSuspensionList_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HYHSuspensionList_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		52AC279157A7C6D4F695A6BB25DBCA72 /* HYHSuspensionList.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = HYHSuspensionList.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5C4F31330DFA99D699E4BDC8C3573D73 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,6 +255,8 @@
 		817AD7D4CDDED80C13CB2439D08C33BC /* HYHSuspensionList */ = {
 			isa = PBXGroup;
 			children = (
+				4AD9230F22EF100700A6B95B /* HYHTableView.h */,
+				4AD9231022EF100700A6B95B /* HYHTableView.m */,
 				4AD9230722EEF85000A6B95B /* HYHSuspensionViewDefine.h */,
 				4AD9230822EEF85000A6B95B /* HYHSuspensionViewDefine.m */,
 				613F9DEDFF8B32053A8A28605931027F /* HYHInnerTableViewCell.h */,
@@ -406,6 +412,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AD9231122EF100700A6B95B /* HYHTableView.h in Headers */,
 				E9AA835DA8B37329796BFD032F7E34F8 /* HYHInnerTableViewCell.h in Headers */,
 				4AD9230922EEF85100A6B95B /* HYHSuspensionViewDefine.h in Headers */,
 				A368DF7176C05941E57DB2A0C8D1C9A0 /* HYHSuspensionList-umbrella.h in Headers */,
@@ -556,6 +563,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AD9231222EF100700A6B95B /* HYHTableView.m in Sources */,
 				47B32CBC4430A281D52CF8600C98A8BF /* HYHInnerTableViewCell.m in Sources */,
 				6CEFAC61ECD80A0642DF23D750D6E7D5 /* HYHSuspensionList-dummy.m in Sources */,
 				4AD9230A22EEF85100A6B95B /* HYHSuspensionViewDefine.m in Sources */,

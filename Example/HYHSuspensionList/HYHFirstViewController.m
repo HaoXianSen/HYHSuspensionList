@@ -60,6 +60,13 @@
     return 60.f;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (self.itemScrollViewDidScroll) {
+        self.itemScrollViewDidScroll(scrollView);
+    }
+}
+
+
 /*
 #pragma mark - Navigation
 

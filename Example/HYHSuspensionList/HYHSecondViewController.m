@@ -55,6 +55,12 @@
     self.tableView.frame = self.view.bounds;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (self.itemScrollViewDidScroll) {
+        self.itemScrollViewDidScroll(scrollView);
+    }
+}
+
 /*
 #pragma mark - Navigation
 

@@ -9,9 +9,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol HYHInnerTableViewCellDelegate;
+
 @interface HYHInnerTableViewCell : UITableViewCell
 
 @property (nonatomic, weak, readonly) UIScrollView *scrollView;
+
+@property (nonatomic, weak) id<HYHInnerTableViewCellDelegate> delegate;
+
+@end
+
+@protocol HYHInnerTableViewCellDelegate <NSObject>
+
+- (void)innerTableViewCell:(HYHInnerTableViewCell *)cell scrolledToPageIndex:(NSInteger)index;
 
 @end
 
