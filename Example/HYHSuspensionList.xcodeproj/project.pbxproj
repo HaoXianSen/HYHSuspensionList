@@ -73,7 +73,7 @@
 		BE0219A3851098DFED192B97 /* Pods-HYHSuspensionList_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYHSuspensionList_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYHSuspensionList_Example/Pods-HYHSuspensionList_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C1AF32E1C492236BB5062A48 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D492D4570F3457A7EA4C730E /* Pods_HYHSuspensionList_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HYHSuspensionList_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC802AE7A732F751B35CD658 /* HYHSuspensionList.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HYHSuspensionList.podspec; path = ../HYHSuspensionList.podspec; sourceTree = "<group>"; };
+		FC802AE7A732F751B35CD658 /* HYHSuspensionList.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HYHSuspensionList.podspec; path = ../HYHSuspensionList.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FF5895B47F1BF7E477A8C18E /* Pods-HYHSuspensionList_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYHSuspensionList_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYHSuspensionList_Tests/Pods-HYHSuspensionList_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
