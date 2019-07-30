@@ -28,6 +28,7 @@
         UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
         scrollView.pagingEnabled = YES;
         scrollView.delegate = self;
+        scrollView.bounces = NO;
         scrollView.showsVerticalScrollIndicator = NO;
         scrollView.showsHorizontalScrollIndicator = NO;
         scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
