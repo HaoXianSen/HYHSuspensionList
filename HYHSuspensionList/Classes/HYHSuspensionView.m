@@ -144,7 +144,7 @@ static NSString *kCellId = @"HYH_CELL_IDENTIFIER";
 #pragma mark - HYHInnerTableViewCellDelegate
 
 - (void)innerTableViewCell:(HYHInnerTableViewCell *)cell didsSrolledToPageIndex:(NSInteger)index {
-    self.currentIndex = index;
+    _currentIndex = index;
     if ([self.delegate respondsToSelector:@selector(suspensionView:didChangeSlidePageIndex:)]) {
         [self.delegate suspensionView:self didChangeSlidePageIndex:self.currentIndex];
     }
@@ -234,6 +234,18 @@ static NSString *kCellId = @"HYH_CELL_IDENTIFIER";
 
 - (void)forceUpdateItemLayout {
     [self changeCanScrollDistanceWithScrollView:nil];
+}
+
+- (void)setCurrentIndex:(NSInteger)currentIndex {
+    NSInteger safeIndex = MAX(0, MIN(currentIndex, self.itemsArray.count));
+    if (_currentIndex != safeIndex) {
+        _currentIndex = safeIndex;
+        HYHInnerTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        if (cell) {
+            UIScrollView *scrollView = cell.scrollView;
+            [cell.scrollView setContentOffset:CGPointMake(safeIndex * scrollView.bounds.size.width, 0)];
+        }
+    }
 }
 
 @end
