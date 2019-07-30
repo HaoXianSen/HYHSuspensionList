@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) NSInteger currentIndex;
 
+@property (nonatomic, weak, readonly) UITableView *innerTableView;
+
+- (void)forceUpdateItemLayout;
 
 @end
 
@@ -42,6 +45,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)suspensionView:(HYHSuspensionView *)suspensionView didChangeSlidePageIndex:(NSInteger)currentIndex;
 
+- (void)suspensionView:(HYHSuspensionView *)suspensionView willChangeSlidePageIndex:(NSInteger)currentIndex;
+
 @end
 
 @protocol HYHItemProtocol <NSObject>
@@ -49,7 +54,6 @@ NS_ASSUME_NONNULL_BEGIN
 @required
 
 @property (nonatomic, copy) void(^itemScrollViewDidScroll)(UIScrollView *scroll);
-@property (nonatomic, copy) void(^itemViewDidAppear)(UIScrollView *scroll);
 
 - (UIView *)containerView;
 - (UIScrollView *)scrollView;
