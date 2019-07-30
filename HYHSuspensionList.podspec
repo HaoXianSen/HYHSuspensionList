@@ -14,11 +14,11 @@ Pod::Spec.new do |s|
   Supension list, like DOUYIN video detail page
                        DESC
 
-  s.homepage         = 'https://github.com/1335430614@qq.com/HYHSuspensionList'
+  s.homepage         = 'https://github.com/HaoXianSen/HYHSuspensionList'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '1335430614@qq.com' => '1335430614@qq.com' }
-  s.source           = { :git => 'https://github.com/1335430614@qq.com/HYHSuspensionList.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/HaoXianSen/HYHSuspensionList.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
