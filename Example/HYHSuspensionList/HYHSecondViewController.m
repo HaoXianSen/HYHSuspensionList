@@ -23,7 +23,6 @@
     tableView.delegate = self;
     tableView.dataSource = self;
     [tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"cell"];
-//    tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:tableView];
     _tableView = tableView;
 }
@@ -37,7 +36,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -58,6 +57,13 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (self.itemScrollViewDidScroll) {
         self.itemScrollViewDidScroll(scrollView);
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (self.itemViewDidAppear) {
+        self.itemViewDidAppear(self.tableView);
     }
 }
 

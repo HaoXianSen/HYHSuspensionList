@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HYHSecondViewController : UIViewController<HYHItemProtocol>
 
 @property (nonatomic, copy) void(^itemScrollViewDidScroll)(UIScrollView *scroll);
-
+@property (nonatomic, copy) void(^itemViewDidAppear)(UIScrollView *scroll);
 @end
 
 NS_ASSUME_NONNULL_END

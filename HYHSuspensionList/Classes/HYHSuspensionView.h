@@ -49,6 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 @required
 
 @property (nonatomic, copy) void(^itemScrollViewDidScroll)(UIScrollView *scroll);
+@property (nonatomic, copy) void(^itemViewDidAppear)(UIScrollView *scroll);
 
 - (UIView *)containerView;
 - (UIScrollView *)scrollView;

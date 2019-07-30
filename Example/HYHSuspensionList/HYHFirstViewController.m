@@ -26,11 +26,14 @@
 //    tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:tableView];
     _tableView = tableView;
+    
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     self.tableView.frame = self.view.bounds;
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 34, 0);
 }
 
 - (void)viewDidLayoutSubviews {
@@ -63,6 +66,13 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (self.itemScrollViewDidScroll) {
         self.itemScrollViewDidScroll(scrollView);
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (self.itemViewDidAppear) {
+        self.itemViewDidAppear(self.tableView);
     }
 }
 

@@ -10,6 +10,7 @@
 @interface HYHInnerTableViewCell ()<UIScrollViewDelegate>
 
 @property (nonatomic, weak) UIScrollView *scrollView;
+@property (nonatomic, weak) UIView *scrollContentView;
 
 @property (nonatomic, assign) NSInteger index;
 
@@ -32,6 +33,11 @@
         scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [self.contentView addSubview:scrollView];
         _scrollView = scrollView;
+        
+        CGRect rect = {CGPointZero, scrollView.contentSize};
+        UIView *contentView = [[UIView alloc] initWithFrame:rect];
+        [_scrollView addSubview:contentView];
+        _scrollContentView = contentView;
     }
     return self;
 }
@@ -48,11 +54,19 @@
     CGFloat offsetX = scrollView.contentOffset.x;
     CGFloat width = scrollView.bounds.size.width;
     NSInteger index = offsetX / (width * 0.5);
-    if (self.index != index) {
-        self.index = index;
-        if ([self.delegate respondsToSelector:@selector(innerTableViewCell:scrolledToPageIndex:)]) {
-            [self.delegate innerTableViewCell:self scrolledToPageIndex:index];
-        }
+    self.index = index;
+    if ([self.delegate respondsToSelector:@selector(innerTableViewCell:willScrollToPageIndex:)]) {
+            [self.delegate innerTableViewCell:self willScrollToPageIndex:index];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    CGFloat offsetX = scrollView.contentOffset.x;
+    CGFloat width = scrollView.bounds.size.width;
+    NSInteger index = offsetX / width;
+    self.index = index;
+    if ([self.delegate respondsToSelector:@selector(innerTableViewCell:didsSrolledToPageIndex:)]) {
+            [self.delegate innerTableViewCell:self didsSrolledToPageIndex:index];
     }
 }
 
