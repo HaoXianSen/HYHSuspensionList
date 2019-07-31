@@ -120,8 +120,9 @@ static NSString *kCellId = @"HYH_CELL_IDENTIFIER";
                 [controller didMoveToParentViewController:currentViewController];
                 
             }
+            __weak typeof(self) weakSelf = self;
             [item setItemScrollViewDidScroll:^(UIScrollView * _Nonnull scroll) {
-                [self itemScrollViewDidScroll:scroll];
+                [weakSelf itemScrollViewDidScroll:scroll];
             }];
             UIView *containerView = item.containerView;
             containerView.frame = CGRectMake(i * w, 0, w, h);
@@ -246,6 +247,10 @@ static NSString *kCellId = @"HYH_CELL_IDENTIFIER";
             [cell.scrollView setContentOffset:CGPointMake(safeIndex * scrollView.bounds.size.width, 0)];
         }
     }
+}
+
+- (void)dealloc {
+    NSLog(@"释放");
 }
 
 @end

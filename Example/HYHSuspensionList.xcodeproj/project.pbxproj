@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0BE9EA6E484401BC05F1D8AA /* Pods_HYHSuspensionList_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D492D4570F3457A7EA4C730E /* Pods_HYHSuspensionList_Example.framework */; };
 		3C06E3D8041DED73F6A718D4 /* Pods_HYHSuspensionList_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9417EA3460F4C4F937C67D2C /* Pods_HYHSuspensionList_Tests.framework */; };
+		4ABCC42B22F1A0B400B5FF09 /* HYHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABCC42A22F1A0B400B5FF09 /* HYHMainViewController.m */; };
 		4AD922FC22EECDC500A6B95B /* header_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4AD922FB22EECDC500A6B95B /* header_image.jpg */; };
 		4AD922FF22EED5CE00A6B95B /* HYHFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD922FE22EED5CE00A6B95B /* HYHFirstViewController.m */; };
 		4AD9230222EED5DC00A6B95B /* HYHSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9230122EED5DC00A6B95B /* HYHSecondViewController.m */; };
@@ -42,6 +43,8 @@
 /* Begin PBXFileReference section */
 		165D2946D69B035F09ADF3D9 /* Pods-HYHSuspensionList_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYHSuspensionList_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYHSuspensionList_Tests/Pods-HYHSuspensionList_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		34C959933BE8A3C04C94014A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		4ABCC42922F1A0B400B5FF09 /* HYHMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYHMainViewController.h; sourceTree = "<group>"; };
+		4ABCC42A22F1A0B400B5FF09 /* HYHMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYHMainViewController.m; sourceTree = "<group>"; };
 		4AD922FB22EECDC500A6B95B /* header_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = header_image.jpg; sourceTree = "<group>"; };
 		4AD922FD22EED5CE00A6B95B /* HYHFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYHFirstViewController.h; sourceTree = "<group>"; };
 		4AD922FE22EED5CE00A6B95B /* HYHFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYHFirstViewController.m; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 			children = (
 				6003F59C195388D20070C39A /* HYHAppDelegate.h */,
 				6003F59D195388D20070C39A /* HYHAppDelegate.m */,
+				4ABCC42922F1A0B400B5FF09 /* HYHMainViewController.h */,
+				4ABCC42A22F1A0B400B5FF09 /* HYHMainViewController.m */,
 				6003F5A5195388D20070C39A /* HYHViewController.h */,
 				6003F5A6195388D20070C39A /* HYHViewController.m */,
 				4AD922FD22EED5CE00A6B95B /* HYHFirstViewController.h */,
@@ -392,6 +397,7 @@
 				6003F59E195388D20070C39A /* HYHAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* HYHViewController.m in Sources */,
 				4AD9230222EED5DC00A6B95B /* HYHSecondViewController.m in Sources */,
+				4ABCC42B22F1A0B400B5FF09 /* HYHMainViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				4AD922FF22EED5CE00A6B95B /* HYHFirstViewController.m in Sources */,
 			);
