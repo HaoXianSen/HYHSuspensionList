@@ -190,8 +190,8 @@ static NSString *kCellId = @"HYH_CELL_IDENTIFIER";
         [scrollView setContentOffset:CGPointZero];
     }
     CGFloat segmentH = [self.dataSource suspensionViewsSegementViewHeight:self];
-    CGFloat maxRowHeight = self.bounds.size.height - segmentH;
-    if (maxRowHeight > self.tableView.rowHeight) {
+    CGFloat maxRowHeight = self.bounds.size.height - segmentH - HYH_BOTTOM_HEIGHT;
+    if ( self.tableView.rowHeight < maxRowHeight) {
         [scrollView setContentOffset:CGPointZero];
     }
 }
