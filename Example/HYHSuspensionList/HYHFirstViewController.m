@@ -23,6 +23,7 @@
     tableView.delegate = self;
     tableView.dataSource = self;
     [tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"cell"];
+    tableView.contentInset = UIEdgeInsetsMake(0, 0, 34, 0);
 //    tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:tableView];
     _tableView = tableView;
@@ -32,8 +33,6 @@
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     self.tableView.frame = self.view.bounds;
-    
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 34, 0);
 }
 
 - (void)viewDidLayoutSubviews {
@@ -50,7 +49,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 12;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

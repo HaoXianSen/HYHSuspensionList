@@ -12,6 +12,8 @@
 
 #import "HYHInnerTableViewCell.h"
 #import "HYHSuspensionView.h"
+#import "HYHSuspensionViewDefine.h"
+#import "HYHTableView.h"
 
 FOUNDATION_EXPORT double HYHSuspensionListVersionNumber;
 FOUNDATION_EXPORT const unsigned char HYHSuspensionListVersionString[];

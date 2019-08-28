@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIView *)suspensionViewSegmentView:(HYHSuspensionView *)suspensionView;
 - (CGFloat)suspensionViewsSegementViewHeight:(HYHSuspensionView *)suspensionView;
 
-- (id<HYHItemProtocol>)suspensionView:(HYHSuspensionView *)suspensionView controllerForSliderAtIndex:(NSInteger)index;
+- (id<HYHItemProtocol>)suspensionView:(HYHSuspensionView *)suspensionView itemAtSlideIndex:(NSInteger)index;
 
 
 @end

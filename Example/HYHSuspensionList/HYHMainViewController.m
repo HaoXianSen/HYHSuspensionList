@@ -56,7 +56,7 @@
     return self;
 }
 
-- (id<HYHItemProtocol>)suspensionView:(nonnull HYHSuspensionView *)suspensionView controllerForSliderAtIndex:(NSInteger)index {
+- (id<HYHItemProtocol>)suspensionView:(nonnull HYHSuspensionView *)suspensionView itemAtSlideIndex:(NSInteger)index{
     
     if (index == 0) {
         HYHFirstViewController *viewController = [[HYHFirstViewController alloc] init];

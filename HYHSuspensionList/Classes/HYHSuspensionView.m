@@ -111,7 +111,7 @@ static NSString *kCellId = @"HYH_CELL_IDENTIFIER";
     if (self.itemsArray.count == 0) {
         [cell.scrollContentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
         for (int i = 0; i < itemsCount; i++) {
-            id<HYHItemProtocol> item = [self.dataSource suspensionView:self controllerForSliderAtIndex:i];
+            id<HYHItemProtocol> item = [self.dataSource suspensionView:self itemAtSlideIndex:i];
             if ([item isKindOfClass:UIViewController.class]) {
                 UIViewController *currentViewController = [self.dataSource suspensionViewAddedViewController:self];
                 UIViewController *controller = (UIViewController *)item;
@@ -208,7 +208,7 @@ static NSString *kCellId = @"HYH_CELL_IDENTIFIER";
     }
     UIView *headerView = [self.dataSource suspensionViewHeaderView:self];
     CGFloat segmentH = [self.dataSource suspensionViewsSegementViewHeight:self];
-    CGFloat minCellH = self.bounds.size.height - headerView.bounds.size.height - segmentH - HYH_BOTTOM_HEIGHT;
+    CGFloat minCellH = self.bounds.size.height - headerView.bounds.size.height - segmentH;
     CGFloat scrollContentH = scrollView.contentSize.height;
     CGFloat maxRowHeight = self.bounds.size.height - segmentH;
     if (scrollContentH > minCellH) {
