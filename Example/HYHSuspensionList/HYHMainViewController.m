@@ -10,6 +10,7 @@
 #import "HYHFirstViewController.h"
 #import "HYHSecondViewController.h"
 #import <HYHSuspensionList/HYHSuspensionView.h>
+#import "HYHSegmentControl.h"
 
 @interface HYHMainViewController ()<HYHSuspensionViewDelegate, HYHSuspensionViewDataSource>
 @property (nonatomic, weak) HYHSuspensionView *suspensionView;
@@ -52,6 +53,11 @@
     
 }
 
+- (void)suspensionView:(nonnull HYHSuspensionView *)suspensionView willChangeSlidePageIndex:(NSInteger)currentIndex {
+    
+}
+
+
 - (UIViewController *)suspensionViewAddedViewController:(HYHSuspensionView *)suspensionView {
     return self;
 }
@@ -81,7 +87,11 @@
 
 - (nonnull UIView *)suspensionViewSegmentView:(nonnull HYHSuspensionView *)suspensionView {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, suspensionView.bounds.size.width, 44)];
-    view.backgroundColor = UIColor.redColor;
+    HYHSegmentControl *segmentControl = [[HYHSegmentControl alloc] initWithFrame:view.bounds];
+    segmentControl.items = @[@"测试1", @"测试2", @"测试3", @"测试4", @"测试5", @"测试6", @"测试7"];
+    segmentControl.currentSelectedIndex = 0;
+    [view addSubview:segmentControl];
+//    view.backgroundColor = UIColor.redColor;
     return view;
 }
 
@@ -90,13 +100,14 @@
 }
 
 /*
-#pragma mark - Navigation
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

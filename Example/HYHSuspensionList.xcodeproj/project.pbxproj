@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0BE9EA6E484401BC05F1D8AA /* Pods_HYHSuspensionList_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D492D4570F3457A7EA4C730E /* Pods_HYHSuspensionList_Example.framework */; };
 		3C06E3D8041DED73F6A718D4 /* Pods_HYHSuspensionList_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9417EA3460F4C4F937C67D2C /* Pods_HYHSuspensionList_Tests.framework */; };
+		4A7D2F29238D22C000644A8C /* HYHSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7D2F28238D22C000644A8C /* HYHSegmentControl.m */; };
+		4A7D2F2D238D276F00644A8C /* HYHSegmentItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7D2F2B238D276F00644A8C /* HYHSegmentItemCell.m */; };
+		4A7D2F2E238D276F00644A8C /* HYHSegmentItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A7D2F2C238D276F00644A8C /* HYHSegmentItemCell.xib */; };
+		4A7D2F31238E128600644A8C /* HYHSegmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7D2F30238E128500644A8C /* HYHSegmentModel.m */; };
 		4ABCC42B22F1A0B400B5FF09 /* HYHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABCC42A22F1A0B400B5FF09 /* HYHMainViewController.m */; };
 		4AD922FC22EECDC500A6B95B /* header_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4AD922FB22EECDC500A6B95B /* header_image.jpg */; };
 		4AD922FF22EED5CE00A6B95B /* HYHFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD922FE22EED5CE00A6B95B /* HYHFirstViewController.m */; };
@@ -43,6 +47,13 @@
 /* Begin PBXFileReference section */
 		165D2946D69B035F09ADF3D9 /* Pods-HYHSuspensionList_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYHSuspensionList_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYHSuspensionList_Tests/Pods-HYHSuspensionList_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		34C959933BE8A3C04C94014A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		4A7D2F27238D22C000644A8C /* HYHSegmentControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYHSegmentControl.h; sourceTree = "<group>"; };
+		4A7D2F28238D22C000644A8C /* HYHSegmentControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYHSegmentControl.m; sourceTree = "<group>"; };
+		4A7D2F2A238D276F00644A8C /* HYHSegmentItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYHSegmentItemCell.h; sourceTree = "<group>"; };
+		4A7D2F2B238D276F00644A8C /* HYHSegmentItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYHSegmentItemCell.m; sourceTree = "<group>"; };
+		4A7D2F2C238D276F00644A8C /* HYHSegmentItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HYHSegmentItemCell.xib; sourceTree = "<group>"; };
+		4A7D2F2F238E128500644A8C /* HYHSegmentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYHSegmentModel.h; sourceTree = "<group>"; };
+		4A7D2F30238E128500644A8C /* HYHSegmentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYHSegmentModel.m; sourceTree = "<group>"; };
 		4ABCC42922F1A0B400B5FF09 /* HYHMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYHMainViewController.h; sourceTree = "<group>"; };
 		4ABCC42A22F1A0B400B5FF09 /* HYHMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYHMainViewController.m; sourceTree = "<group>"; };
 		4AD922FB22EECDC500A6B95B /* header_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = header_image.jpg; sourceTree = "<group>"; };
@@ -143,6 +154,13 @@
 		6003F593195388D20070C39A /* Example for HYHSuspensionList */ = {
 			isa = PBXGroup;
 			children = (
+				4A7D2F27238D22C000644A8C /* HYHSegmentControl.h */,
+				4A7D2F28238D22C000644A8C /* HYHSegmentControl.m */,
+				4A7D2F2A238D276F00644A8C /* HYHSegmentItemCell.h */,
+				4A7D2F2B238D276F00644A8C /* HYHSegmentItemCell.m */,
+				4A7D2F2C238D276F00644A8C /* HYHSegmentItemCell.xib */,
+				4A7D2F2F238E128500644A8C /* HYHSegmentModel.h */,
+				4A7D2F30238E128500644A8C /* HYHSegmentModel.m */,
 				6003F59C195388D20070C39A /* HYHAppDelegate.h */,
 				6003F59D195388D20070C39A /* HYHAppDelegate.m */,
 				4ABCC42922F1A0B400B5FF09 /* HYHMainViewController.h */,
@@ -266,6 +284,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "1335430614@qq.com";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = Q7XTNF769W;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -298,6 +319,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				4A7D2F2E238D276F00644A8C /* HYHSegmentItemCell.xib in Resources */,
 				4AD922FC22EECDC500A6B95B /* header_image.jpg in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
@@ -395,10 +417,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* HYHAppDelegate.m in Sources */,
+				4A7D2F31238E128600644A8C /* HYHSegmentModel.m in Sources */,
 				6003F5A7195388D20070C39A /* HYHViewController.m in Sources */,
+				4A7D2F2D238D276F00644A8C /* HYHSegmentItemCell.m in Sources */,
 				4AD9230222EED5DC00A6B95B /* HYHSecondViewController.m in Sources */,
 				4ABCC42B22F1A0B400B5FF09 /* HYHMainViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				4A7D2F29238D22C000644A8C /* HYHSegmentControl.m in Sources */,
 				4AD922FF22EED5CE00A6B95B /* HYHFirstViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,6 +552,7 @@
 			baseConfigurationReference = 9D7C57A65EB5F17326C66E1F /* Pods-HYHSuspensionList_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Q7XTNF769W;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HYHSuspensionList/HYHSuspensionList-Prefix.pch";
 				INFOPLIST_FILE = "HYHSuspensionList/HYHSuspensionList-Info.plist";
@@ -544,6 +570,7 @@
 			baseConfigurationReference = BE0219A3851098DFED192B97 /* Pods-HYHSuspensionList_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Q7XTNF769W;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HYHSuspensionList/HYHSuspensionList-Prefix.pch";
 				INFOPLIST_FILE = "HYHSuspensionList/HYHSuspensionList-Info.plist";
