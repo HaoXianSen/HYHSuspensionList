@@ -69,6 +69,12 @@ static NSString *kCellId = @"HYH_CELL_IDENTIFIER";
     });
 }
 
+- (void)reloadData {
+    self.tableView.tableHeaderView = [self.dataSource suspensionViewHeaderView:self];
+    [self.itemsArray removeAllObjects];
+    [self.innerTableView reloadData];
+}
+
 - (void)setDelegate:(id<HYHSuspensionViewDelegate>)delegate {
     _delegate = delegate;
 }
@@ -156,16 +162,39 @@ static NSString *kCellId = @"HYH_CELL_IDENTIFIER";
             [self changeCanScrollDistanceWithScrollView:scrollView];
         }
     }
+    self.tableView.scrollEnabled = YES;
 }
 
 - (void)innerTableViewCell:(HYHInnerTableViewCell *)cell willScrollToPageIndex:(NSInteger)index {
+    self.tableView.scrollEnabled = NO;
     if ([self.delegate respondsToSelector:@selector(suspensionView:willChangeSlidePageIndex:)]) {
         [self.delegate suspensionView:self willChangeSlidePageIndex:self.currentIndex];
     }
 }
 
+- (void)innerTableViewCellWillScroll:(HYHInnerTableViewCell *)cell {
+    self.tableView.scrollEnabled = NO;
+}
+
 #pragma mark - UIScrollViewDelegate
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    if ([scrollView isMemberOfClass:HYHTableView.class]) {
+        self.innerScrollView.scrollEnabled = NO;
+        self.tableView.scrollEnabled = YES;
+    } else {
+        self.innerScrollView.scrollEnabled = YES;
+        self.tableView.scrollEnabled = NO;
+    }
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    if ([scrollView isMemberOfClass:UITableView.class]) {
+//        self.innerScrollView.scrollEnabled = NO;
+//        self.tableView.scrollEnabled = YES;
+//    } else {
+//        self.innerScrollView.scrollEnabled = YES;
+//        self.tableView.scrollEnabled = NO;
+//    }
     CGFloat offsetY = scrollView.contentOffset.y;
     CGRect maxScrollRect = [self.tableView rectForHeaderInSection:0];
     CGFloat maxY = maxScrollRect.origin.y;
@@ -181,6 +210,8 @@ static NSString *kCellId = @"HYH_CELL_IDENTIFIER";
             self.forceScrollToTop = NO;
         }
     }
+    self.innerScrollView.scrollEnabled = YES;
+    self.tableView.scrollEnabled = YES;
 }
 
 - (void)itemScrollViewDidScroll:(UIScrollView *)scrollView {

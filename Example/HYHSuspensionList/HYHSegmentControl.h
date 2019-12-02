@@ -19,7 +19,7 @@ typedef void(^SegmentControlChangeBloc)(NSInteger currentIndex);
 
 @property (nonatomic, copy) SegmentControlChangeBloc indexChangeBloc;
 
-/// default origin
+/// default orange
 @property (nonatomic, strong) UIColor *indicatorColor;
 /// default YES
 @property (nonatomic, assign) BOOL showIndicator;

@@ -9,6 +9,11 @@
 
 @implementation HYHTableView
 
+//- (void)setCanScroll:(BOOL)canScroll {
+//    _canScroll = canScroll;
+//    self.scrollEnabled = canScroll;
+//}
+
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(nonnull UIGestureRecognizer *)otherGestureRecognizer {
     return YES;
 }

@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak, readonly) UITableView *innerTableView;
 
 - (void)forceUpdateItemLayout;
+- (void)reloadData;
 
 @end
 

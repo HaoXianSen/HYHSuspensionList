@@ -71,4 +71,8 @@
     }
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.delegate innerTableViewCellWillScroll:self];
+}
+
 @end

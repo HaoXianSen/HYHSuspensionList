@@ -85,7 +85,7 @@ static NSString * const CELL_IDENTIFIER = @"CollectionCellIdentifier";
 #pragma mark - setter
 
 - (void)setItems:(NSArray<NSString *> *)items {
-    NSAssert(items && items.count > 0, @"items can not null or item is null");
+    NSAssert(items && items.count > 0, @"items is null or item is null");
     _items = items;
     NSMutableArray *array = [NSMutableArray array];
     [_items enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

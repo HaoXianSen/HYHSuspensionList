@@ -14,6 +14,12 @@
 
 @interface HYHMainViewController ()<HYHSuspensionViewDelegate, HYHSuspensionViewDataSource>
 @property (nonatomic, weak) HYHSuspensionView *suspensionView;
+
+@property (nonatomic, strong) NSMutableArray *titlesArray;
+
+@property (nonatomic, strong) HYHSegmentControl *control;
+@property (nonatomic, assign) NSInteger testIndex;
+
 @end
 
 @implementation HYHMainViewController
@@ -22,19 +28,36 @@
 {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
-    //    self.automaticallyAdjustsScrollViewInsets  = NO;
+    self.testIndex = 4;
+    self.titlesArray = [NSMutableArray arrayWithArray:@[@"测试1", @"测试222", @"测试33333"]];
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    [self addSubViews];
+}
+
+- (void)addSubViews {
     HYHSuspensionView *suspensionView = [[HYHSuspensionView alloc] initWithFrame:self.view.bounds];
     suspensionView.dataSource = self;
     suspensionView.delegate = self;
     [self.view addSubview:suspensionView];
     _suspensionView = suspensionView;
     
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"改变 items 数量" style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonAction)];
+    self.navigationItem.rightBarButtonItem = item;
 }
 
-//- (BOOL)extendedLayoutIncludesOpaqueBars {
-//    return NO;
-//}
+- (void)rightBarButtonAction {
+    [self.titlesArray addObject:[NSString stringWithFormat:@"test%ld", self.testIndex]];
+    self.control.items = self.titlesArray;
+    self.testIndex++;
+    [self.suspensionView reloadData];
+}
+
+- (HYHSegmentControl *)control {
+    if (!_control) {
+        _control = [[HYHSegmentControl alloc] initWithFrame:CGRectMake(0, 0, self.suspensionView.bounds.size.width, 44) itemTitles:self.titlesArray];
+    }
+    return _control;
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -50,7 +73,7 @@
 #pragma mark - HYHSuspensionViewDataSource delegate
 
 - (void)suspensionView:(nonnull HYHSuspensionView *)suspensionView didChangeSlidePageIndex:(NSInteger)currentIndex {
-    
+    self.control.currentSelectedIndex = currentIndex;
 }
 
 - (void)suspensionView:(nonnull HYHSuspensionView *)suspensionView willChangeSlidePageIndex:(NSInteger)currentIndex {
@@ -64,13 +87,14 @@
 
 - (id<HYHItemProtocol>)suspensionView:(nonnull HYHSuspensionView *)suspensionView itemAtSlideIndex:(NSInteger)index{
     
-    if (index == 0) {
-        HYHFirstViewController *viewController = [[HYHFirstViewController alloc] init];
-        return viewController;
-    } else {
-        HYHSecondViewController *viewController = [[HYHSecondViewController alloc] init];
-        return viewController;
-    }
+    //    if (index == 0) {
+    HYHFirstViewController *viewController = [[HYHFirstViewController alloc] init];
+    viewController.view.backgroundColor = index % 2 == 0 ? UIColor.redColor : UIColor.blueColor;
+    return viewController;
+    //    } else {
+    //        HYHSecondViewController *viewController = [[HYHSecondViewController alloc] init];
+    //        return viewController;
+    //    }
 }
 
 - (nonnull UIView *)suspensionViewHeaderView:(nonnull HYHSuspensionView *)suspensionView {
@@ -82,13 +106,12 @@
 }
 
 - (NSInteger)suspensionViewNumberOfItems:(nonnull HYHSuspensionView *)suspensionView {
-    return 2;
+    return self.titlesArray.count;
 }
 
 - (nonnull UIView *)suspensionViewSegmentView:(nonnull HYHSuspensionView *)suspensionView {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, suspensionView.bounds.size.width, 44)];
-    HYHSegmentControl *segmentControl = [[HYHSegmentControl alloc] initWithFrame:view.bounds itemTitles:@[@"测试1", @"测试222", @"测试33333", @"测试4", @"测试555", @"测试6", @"测试777"]];
-    [view addSubview:segmentControl];
+    [view addSubview:self.control];
     return view;
 }
 

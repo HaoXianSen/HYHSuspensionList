@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)innerTableViewCell:(HYHInnerTableViewCell *)cell willScrollToPageIndex:(NSInteger)index;
 - (void)innerTableViewCell:(HYHInnerTableViewCell *)cell didsSrolledToPageIndex:(NSInteger)index;
+- (void)innerTableViewCellWillScroll:(HYHInnerTableViewCell *)cell;
+- (void)innerTableViewCellDidScroll:(HYHInnerTableViewCell *)cell;
 
 @end
 
