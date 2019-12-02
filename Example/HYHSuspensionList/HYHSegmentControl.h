@@ -19,6 +19,13 @@ typedef void(^SegmentControlChangeBloc)(NSInteger currentIndex);
 
 @property (nonatomic, copy) SegmentControlChangeBloc indexChangeBloc;
 
+/// default origin
+@property (nonatomic, strong) UIColor *indicatorColor;
+/// default YES
+@property (nonatomic, assign) BOOL showIndicator;
+
+- (instancetype)initWithFrame:(CGRect)frame itemTitles:(NSArray <NSString *> *)itemTitles;
+
 @end
 
 NS_ASSUME_NONNULL_END

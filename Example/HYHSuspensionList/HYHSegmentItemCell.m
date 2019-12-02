@@ -27,18 +27,17 @@
     self.titleLabel.textColor = model.normalColor;
     self.titleLabel.highlightedTextColor = model.heighlightColor;
     self.titleLabel.highlighted = model.heighlighted;
-    [self addObserver:_model forKeyPath:@"heighlighted" options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:self forKeyPath:@"_model.heighlighted" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     id newValue = [change objectForKey:NSKeyValueChangeNewKey];
     BOOL heighlighted = [newValue boolValue];
     self.titleLabel.highlighted = heighlighted;
-    NSLog(@"HYH");
 }
 
 - (void)dealloc
 {
-    [self removeObserver:self.model forKeyPath:@"heighlighted"];
+    [self removeObserver:self forKeyPath:@"_model.heighlighted"];
 }
 @end

@@ -87,11 +87,8 @@
 
 - (nonnull UIView *)suspensionViewSegmentView:(nonnull HYHSuspensionView *)suspensionView {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, suspensionView.bounds.size.width, 44)];
-    HYHSegmentControl *segmentControl = [[HYHSegmentControl alloc] initWithFrame:view.bounds];
-    segmentControl.items = @[@"测试1", @"测试2", @"测试3", @"测试4", @"测试5", @"测试6", @"测试7"];
-    segmentControl.currentSelectedIndex = 0;
+    HYHSegmentControl *segmentControl = [[HYHSegmentControl alloc] initWithFrame:view.bounds itemTitles:@[@"测试1", @"测试222", @"测试33333", @"测试4", @"测试555", @"测试6", @"测试777"]];
     [view addSubview:segmentControl];
-//    view.backgroundColor = UIColor.redColor;
     return view;
 }
 

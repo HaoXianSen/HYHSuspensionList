@@ -15,11 +15,18 @@ static NSString * const CELL_IDENTIFIER = @"CollectionCellIdentifier";
 @interface HYHSegmentControl ()<UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 
 @property (nonatomic, weak) UICollectionView *collectionView;
+@property (nonatomic, weak) UIView *indicatorView;
 @property (nonatomic, copy) NSArray<HYHSegmentModel *> *itemModels;
 
 @end
 
 @implementation HYHSegmentControl
+
+- (instancetype)initWithFrame:(CGRect)frame itemTitles:(NSArray <NSString *> *)itemTitles {
+    HYHSegmentControl *control = [self initWithFrame:frame];
+    self.items = itemTitles;
+    return control;
+}
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
@@ -47,10 +54,13 @@ static NSString * const CELL_IDENTIFIER = @"CollectionCellIdentifier";
 - (void)initailize {
     
     _currentSelectedIndex = -1;
+    _showIndicator = true;
+    _indicatorColor = UIColor.orangeColor;
     
     self.backgroundColor = UIColor.whiteColor;
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    flowLayout.minimumInteritemSpacing = 0;
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
     [collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(HYHSegmentItemCell.class) bundle:nil] forCellWithReuseIdentifier:CELL_IDENTIFIER];
     collectionView.dataSource = self;
@@ -60,6 +70,11 @@ static NSString * const CELL_IDENTIFIER = @"CollectionCellIdentifier";
     collectionView.showsHorizontalScrollIndicator = false;
     [self addSubview:collectionView];
     _collectionView = collectionView;
+    
+    UIView *scrollIndicatorView = [[UIView alloc] initWithFrame:CGRectZero];
+    scrollIndicatorView.backgroundColor = self.indicatorColor;
+    [self.collectionView addSubview:scrollIndicatorView];
+    _indicatorView = scrollIndicatorView;
 }
 
 - (void)layoutSubviews {
@@ -75,10 +90,18 @@ static NSString * const CELL_IDENTIFIER = @"CollectionCellIdentifier";
     NSMutableArray *array = [NSMutableArray array];
     [_items enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         HYHSegmentModel *model = [HYHSegmentModel segmentModelWithTitle:obj];
+        if (idx == 0) {
+            model.heighlighted = true;
+        }
         [array addObject:model];
     }];
     self.itemModels = [array copy];
     [self.collectionView reloadData];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.currentSelectedIndex == -1) {
+            self.currentSelectedIndex = 0;
+        }
+    });
 }
 
 - (void)setCurrentSelectedIndex:(NSInteger)currentSelectedIndex {
@@ -88,6 +111,27 @@ static NSString * const CELL_IDENTIFIER = @"CollectionCellIdentifier";
     _currentSelectedIndex = currentSelectedIndex;
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:currentSelectedIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
     [self resetHeightlightStateWithCurrentSelectedIndex:_currentSelectedIndex];
+    
+    HYHSegmentItemCell *itemCell = (HYHSegmentItemCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:currentSelectedIndex inSection:0]];
+    CGRect rect = itemCell.frame;
+    [UIView animateWithDuration:0.2 animations:^{
+        self.indicatorView.frame = CGRectMake(rect.origin.x+8, self.bounds.size.height - 3, rect.size.width-16, 2);
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+
+- (void)setShowIndicator:(BOOL)showIndicator {
+    if (_showIndicator != showIndicator) {
+        _showIndicator = showIndicator;
+        _indicatorView.hidden = !_showIndicator;
+    }
+}
+
+- (void)setIndicatorColor:(UIColor *)indicatorColor {
+    _indicatorColor = indicatorColor;
+    _indicatorView.backgroundColor = _indicatorColor;
 }
 
 #pragma mark - data source
@@ -121,9 +165,7 @@ static NSString * const CELL_IDENTIFIER = @"CollectionCellIdentifier";
 
 - (void)resetHeightlightStateWithCurrentSelectedIndex:(NSInteger)index {
     [self.itemModels enumerateObjectsUsingBlock:^(HYHSegmentModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [obj willChangeValueForKey:@"heighlighted"];
         obj.heighlighted = idx == index;
-        [obj didChangeValueForKey:@"heighlighted"];
     }];
 }
 
