@@ -162,20 +162,21 @@ static NSString *kCellId = @"HYH_CELL_IDENTIFIER";
             [self changeCanScrollDistanceWithScrollView:scrollView];
         }
     }
-    self.tableView.scrollEnabled = YES;
 }
 
 - (void)innerTableViewCell:(HYHInnerTableViewCell *)cell willScrollToPageIndex:(NSInteger)index {
-    self.tableView.scrollEnabled = NO;
     if ([self.delegate respondsToSelector:@selector(suspensionView:willChangeSlidePageIndex:)]) {
         [self.delegate suspensionView:self willChangeSlidePageIndex:self.currentIndex];
     }
 }
 
-- (void)innerTableViewCellWillScroll:(HYHInnerTableViewCell *)cell {
+- (void)innerTableViewCellWillBeiginDragging:(HYHInnerTableViewCell *)cell {
     self.tableView.scrollEnabled = NO;
 }
 
+- (void)innerTableViewCellDidEndDragging:(HYHInnerTableViewCell *)cell {
+    self.tableView.scrollEnabled = YES;
+}
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     if ([scrollView isMemberOfClass:HYHTableView.class]) {
@@ -275,13 +276,9 @@ static NSString *kCellId = @"HYH_CELL_IDENTIFIER";
         HYHInnerTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
         if (cell) {
             UIScrollView *scrollView = cell.scrollView;
-            [cell.scrollView setContentOffset:CGPointMake(safeIndex * scrollView.bounds.size.width, 0)];
+            [cell.scrollView setContentOffset:CGPointMake(safeIndex * scrollView.bounds.size.width, 0) animated:self.switchPageAnimated];
         }
     }
-}
-
-- (void)dealloc {
-    NSLog(@"释放");
 }
 
 @end

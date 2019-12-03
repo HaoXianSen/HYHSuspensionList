@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger currentIndex;
 
 @property (nonatomic, weak, readonly) UITableView *innerTableView;
+/// default： NO
+@property (nonatomic, assign) BOOL switchPageAnimated;
 
 - (void)forceUpdateItemLayout;
 - (void)reloadData;

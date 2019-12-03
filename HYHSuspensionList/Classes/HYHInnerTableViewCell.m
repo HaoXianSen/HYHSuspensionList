@@ -6,6 +6,7 @@
 //
 
 #import "HYHInnerTableViewCell.h"
+#import "HYHSuspensionViewDefine.h"
 
 @interface HYHInnerTableViewCell ()<UIScrollViewDelegate>
 
@@ -55,9 +56,11 @@
     CGFloat offsetX = scrollView.contentOffset.x;
     CGFloat width = scrollView.bounds.size.width;
     NSInteger index = offsetX / (width * 0.5);
-    self.index = index;
-    if ([self.delegate respondsToSelector:@selector(innerTableViewCell:willScrollToPageIndex:)]) {
+    if (index != _index) {
+        self.index = index;
+        if ([self.delegate respondsToSelector:@selector(innerTableViewCell:willScrollToPageIndex:)]) {
             [self.delegate innerTableViewCell:self willScrollToPageIndex:index];
+        }
     }
 }
 
@@ -72,7 +75,11 @@
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    [self.delegate innerTableViewCellWillScroll:self];
+    safe_callDelegate(self.delegate, @selector(innerTableViewCellWillBeiginDragging:), self);
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    safe_callDelegate(self.delegate, @selector(innerTableViewCellDidEndDragging:), self);
 }
 
 @end

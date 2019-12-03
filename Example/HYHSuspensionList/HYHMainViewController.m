@@ -55,6 +55,12 @@
 - (HYHSegmentControl *)control {
     if (!_control) {
         _control = [[HYHSegmentControl alloc] initWithFrame:CGRectMake(0, 0, self.suspensionView.bounds.size.width, 44) itemTitles:self.titlesArray];
+        __weak typeof(self) weakSelf = self;
+        _control.indexChangeBloc = ^(NSInteger currentIndex) {
+            if (weakSelf.suspensionView.currentIndex != currentIndex) {
+                weakSelf.suspensionView.currentIndex = currentIndex;
+            }
+        };
     }
     return _control;
 }

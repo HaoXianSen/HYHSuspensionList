@@ -90,7 +90,13 @@ static NSString * const CELL_IDENTIFIER = @"CollectionCellIdentifier";
     NSMutableArray *array = [NSMutableArray array];
     [_items enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         HYHSegmentModel *model = [HYHSegmentModel segmentModelWithTitle:obj];
-        if (idx == 0) {
+        if (idx == 0 && self.currentSelectedIndex == -1) {
+            _currentSelectedIndex = 0;
+            model.heighlighted = true;
+        } else if (self.currentSelectedIndex < items.count && idx == self.currentSelectedIndex) {
+            model.heighlighted = true;
+        } else if (idx == items.count -1 && self.currentSelectedIndex >= items.count) {
+            _currentSelectedIndex = idx;
             model.heighlighted = true;
         }
         [array addObject:model];
@@ -98,9 +104,12 @@ static NSString * const CELL_IDENTIFIER = @"CollectionCellIdentifier";
     self.itemModels = [array copy];
     [self.collectionView reloadData];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (self.currentSelectedIndex == -1) {
-            self.currentSelectedIndex = 0;
-        }
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.currentSelectedIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+        [self resetHeightlightStateWithCurrentSelectedIndex:_currentSelectedIndex];
+        
+        HYHSegmentItemCell *itemCell = (HYHSegmentItemCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:_currentSelectedIndex inSection:0]];
+        CGRect rect = itemCell.frame;
+        self.indicatorView.frame = CGRectMake(rect.origin.x+8, self.bounds.size.height - 3, rect.size.width-16, 2);
     });
 }
 
@@ -167,6 +176,10 @@ static NSString * const CELL_IDENTIFIER = @"CollectionCellIdentifier";
     [self.itemModels enumerateObjectsUsingBlock:^(HYHSegmentModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         obj.heighlighted = idx == index;
     }];
+}
+
+-(void)dealloc {
+    NSLog(@"%s", __func__);
 }
 
 @end

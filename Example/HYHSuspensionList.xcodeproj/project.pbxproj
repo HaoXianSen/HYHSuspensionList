@@ -117,6 +117,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A2E322D23963BA700C25A30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A7D2F27238D22C000644A8C /* HYHSegmentControl.h */,
+				4A7D2F28238D22C000644A8C /* HYHSegmentControl.m */,
+				4A7D2F2A238D276F00644A8C /* HYHSegmentItemCell.h */,
+				4A7D2F2B238D276F00644A8C /* HYHSegmentItemCell.m */,
+				4A7D2F2C238D276F00644A8C /* HYHSegmentItemCell.xib */,
+				4A7D2F30238E128500644A8C /* HYHSegmentModel.m */,
+				4A7D2F2F238E128500644A8C /* HYHSegmentModel.h */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4A2E322E23963BD900C25A30 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4ABCC42922F1A0B400B5FF09 /* HYHMainViewController.h */,
+				4ABCC42A22F1A0B400B5FF09 /* HYHMainViewController.m */,
+				6003F5A5195388D20070C39A /* HYHViewController.h */,
+				6003F5A6195388D20070C39A /* HYHViewController.m */,
+				4AD922FD22EED5CE00A6B95B /* HYHFirstViewController.h */,
+				4AD922FE22EED5CE00A6B95B /* HYHFirstViewController.m */,
+				4AD9230022EED5DC00A6B95B /* HYHSecondViewController.h */,
+				4AD9230122EED5DC00A6B95B /* HYHSecondViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4A2E322F23963BFD00C25A30 /* Ohters */ = {
+			isa = PBXGroup;
+			children = (
+				6003F59C195388D20070C39A /* HYHAppDelegate.h */,
+				6003F59D195388D20070C39A /* HYHAppDelegate.m */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
+				6003F5A8195388D20070C39A /* Images.xcassets */,
+				4AD922FB22EECDC500A6B95B /* header_image.jpg */,
+			);
+			name = Ohters;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -154,27 +196,9 @@
 		6003F593195388D20070C39A /* Example for HYHSuspensionList */ = {
 			isa = PBXGroup;
 			children = (
-				4A7D2F27238D22C000644A8C /* HYHSegmentControl.h */,
-				4A7D2F28238D22C000644A8C /* HYHSegmentControl.m */,
-				4A7D2F2A238D276F00644A8C /* HYHSegmentItemCell.h */,
-				4A7D2F2B238D276F00644A8C /* HYHSegmentItemCell.m */,
-				4A7D2F2C238D276F00644A8C /* HYHSegmentItemCell.xib */,
-				4A7D2F2F238E128500644A8C /* HYHSegmentModel.h */,
-				4A7D2F30238E128500644A8C /* HYHSegmentModel.m */,
-				6003F59C195388D20070C39A /* HYHAppDelegate.h */,
-				6003F59D195388D20070C39A /* HYHAppDelegate.m */,
-				4ABCC42922F1A0B400B5FF09 /* HYHMainViewController.h */,
-				4ABCC42A22F1A0B400B5FF09 /* HYHMainViewController.m */,
-				6003F5A5195388D20070C39A /* HYHViewController.h */,
-				6003F5A6195388D20070C39A /* HYHViewController.m */,
-				4AD922FD22EED5CE00A6B95B /* HYHFirstViewController.h */,
-				4AD922FE22EED5CE00A6B95B /* HYHFirstViewController.m */,
-				4AD9230022EED5DC00A6B95B /* HYHSecondViewController.h */,
-				4AD9230122EED5DC00A6B95B /* HYHSecondViewController.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
-				6003F5A8195388D20070C39A /* Images.xcassets */,
-				4AD922FB22EECDC500A6B95B /* header_image.jpg */,
+				4A2E322E23963BD900C25A30 /* ViewControllers */,
+				4A2E322D23963BA700C25A30 /* Views */,
+				4A2E322F23963BFD00C25A30 /* Ohters */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for HYHSuspensionList";
