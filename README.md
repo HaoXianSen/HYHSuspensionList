@@ -9,6 +9,8 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+## ScreenShot
+
 ## Requirements
 
 iOS 8.0 or later
@@ -24,7 +26,7 @@ pod 'HYHSuspensionList'
 
 ## Author
 
-1335430614@qq.com, 1335430614@qq.com
+1335430614@qq.com
 
 ## License
 
