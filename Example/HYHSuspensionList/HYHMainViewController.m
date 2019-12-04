@@ -41,6 +41,12 @@
     [self.view addSubview:suspensionView];
     _suspensionView = suspensionView;
     
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, suspensionView.bounds.size.width, 120)];
+    imageView.image = [UIImage imageNamed:@"header_image.jpg"];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.clipsToBounds = YES;
+    _suspensionView.headerView = imageView;
+    
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"改变 items 数量" style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonAction)];
     self.navigationItem.rightBarButtonItem = item;
 }
@@ -103,14 +109,6 @@
     //    }
 }
 
-- (nonnull UIView *)suspensionViewHeaderView:(nonnull HYHSuspensionView *)suspensionView {
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, suspensionView.bounds.size.width, 120)];
-    imageView.image = [UIImage imageNamed:@"header_image.jpg"];
-    imageView.contentMode = UIViewContentModeScaleAspectFill;
-    imageView.clipsToBounds = YES;
-    return imageView;
-}
-
 - (NSInteger)suspensionViewNumberOfItems:(nonnull HYHSuspensionView *)suspensionView {
     return self.titlesArray.count;
 }
@@ -121,9 +119,6 @@
     return view;
 }
 
-- (CGFloat)suspensionViewsSegementViewHeight:(nonnull HYHSuspensionView *)suspensionView {
-    return 44.f;
-}
 
 /*
  #pragma mark - Navigation

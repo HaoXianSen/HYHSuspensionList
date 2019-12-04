@@ -4,7 +4,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - HYHSuspensionList (0.0.2)
+  - HYHSuspensionList (0.1.0)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
@@ -20,7 +20,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  HYHSuspensionList: 9afa4298727041654a9a66571e1b17f69d9f5793
+  HYHSuspensionList: 2ef6e930deae819d4dad80e6ec3a14873c96ffe1
 
 PODFILE CHECKSUM: 82257afa60eb725d3107fa4226c6e87fa10e254a
 

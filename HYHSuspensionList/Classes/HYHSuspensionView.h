@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak)id<HYHSuspensionViewDataSource> dataSource;
 @property (nonatomic, weak)id<HYHSuspensionViewDelegate> delegate;
+@property (nonatomic, strong)UIView *headerView;
 
 @property (nonatomic, assign) NSInteger currentIndex;
 
@@ -35,12 +36,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSInteger)suspensionViewNumberOfItems:(HYHSuspensionView *)suspensionView;
 
-- (UIView *)suspensionViewHeaderView:(HYHSuspensionView *)suspensionView;
 - (UIView *)suspensionViewSegmentView:(HYHSuspensionView *)suspensionView;
-- (CGFloat)suspensionViewsSegementViewHeight:(HYHSuspensionView *)suspensionView;
 
 - (id<HYHItemProtocol>)suspensionView:(HYHSuspensionView *)suspensionView itemAtSlideIndex:(NSInteger)index;
 
+
+@optional
+
+- (UIView *)suspensionViewHeaderView:(HYHSuspensionView *)suspensionView __deprecated_msg("use @property headerView replace");
+- (CGFloat)suspensionViewsSegementViewHeight:(HYHSuspensionView *)suspensionView      __deprecated_msg("API deprecated, user suspensionViewSegmentView: get segmentView height");
 
 @end
 

@@ -105,9 +105,9 @@ static NSString * const CELL_IDENTIFIER = @"CollectionCellIdentifier";
     [self.collectionView reloadData];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.currentSelectedIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
-        [self resetHeightlightStateWithCurrentSelectedIndex:_currentSelectedIndex];
+        [self resetHeightlightStateWithCurrentSelectedIndex:self.currentSelectedIndex];
         
-        HYHSegmentItemCell *itemCell = (HYHSegmentItemCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:_currentSelectedIndex inSection:0]];
+        HYHSegmentItemCell *itemCell = (HYHSegmentItemCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:self.currentSelectedIndex inSection:0]];
         CGRect rect = itemCell.frame;
         self.indicatorView.frame = CGRectMake(rect.origin.x+8, self.bounds.size.height - 3, rect.size.width-16, 2);
     });
