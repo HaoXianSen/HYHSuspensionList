@@ -11,7 +11,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## ScreenShot
 
-![image](https://github.com/HaoXianSen/HYHSuspensionList/blob/master/screenshot/screenshot1@2x.png)
+![image](https://github.com/HaoXianSen/HYHSuspensionList/blob/master/screenshot/screenshot1.png)
 ![image](https://github.com/HaoXianSen/HYHSuspensionList/blob/master/screenshot/ezgif.com-resize.gif)
 
 ## Requirements
